@@ -138,7 +138,6 @@ def moveBarriers(dt):
 WIDTH = 1500
 HEIGHT = 1000
 
-
 size = [WIDTH, HEIGHT]
 black = (20,20,40)
 lightblue = (0,120,255)
@@ -147,36 +146,22 @@ red = (255,100,0)
 white = (255,255,255)
 blue = (0,0,255)
 grey = (70,70,70)
-green = (0, 255, 0)
-# black = (0, 0, 0)
 k = 160 # pixels per metre for graphics
-idx = 20
+
 # Screen centre will correspond to (x, y) = (0, 0)
 u0 = WIDTH / 2
 v0 = HEIGHT / 2
 
 
 
-X = 1500
-Y = 1000
 
 # Initialise Pygame display screen
 screen = pygame.display.set_mode(size)
 # This makes the normal mouse pointer invisible in graphics window
 pygame.mouse.set_visible(0)
-pygame.display.set_caption('Show Text')
 
-display_surface = pygame.display.set_mode((X, Y))
-font = pygame.font.Font('freesansbold.ttf', 32)
-text = font.render('Admit', True, black, black)
-text1 = font.render('Salahuddin', True, black, black) 
-# create a rectangular object for the
-# text surface object
-textRect = text.get_rect()
-textRect1 = text1.get_rect()
-# set the center of the rectangular object.
-textRect.center = (X // 2, Y // 2)
-textRect1.center = (X // 2, Y // 1.8)
+
+
 
 
 
@@ -298,10 +283,9 @@ def calculateClosestObstacleDistance(x, y):
 def drawBarriers(barriers):
         for (i,barrier) in enumerate (barriers):
                 if (i == targetindex):
-                        bcol = green
+                        bcol = red
                 else:
                         bcol = lightblue
-
                 pygame.draw.circle(screen, bcol, (int(u0 + k * barrier[0]), int(v0 - k * barrier[1])), int(k * BARRIERRADIUS), 0)
 
 
@@ -318,30 +302,11 @@ for i in range(5):
 
 
 
-
+                
 # Main loop
 while(1):
-        # display_surface.fill(white)
-        display_surface.blit(text, textRect)
-        display_surface.blit(text1, textRect1)
-        for event in pygame.event.get():
- 
-        # if event object type is QUIT
-        # then quitting the pygame
-        # and program both.
-                if event.type == pygame.QUIT:
-        
-                # deactivates the pygame library
-                        pygame.quit()
-                
-                        # quit the program.
-                        quit()
-        
-        # Draws the surface object to the screen.
-        pygame.display.update()
-
-        # Eventlist = pygame.event.get()
-                
+        Eventlist = pygame.event.get()
+                        
 
         
         # Copy of barriers so we can predict their positions
