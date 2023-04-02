@@ -168,8 +168,8 @@ pygame.display.set_caption('Show Text')
 
 display_surface = pygame.display.set_mode((X, Y))
 font = pygame.font.Font('freesansbold.ttf', 32)
-text = font.render('Admit', True, black, black)
-text1 = font.render('Salahuddin', True, black, black) 
+text = font.render('Admit', True, blue, black)
+text1 = font.render('Salahuddin', True, blue, black)
 # create a rectangular object for the
 # text surface object
 textRect = text.get_rect()
@@ -321,7 +321,7 @@ for i in range(5):
 
 # Main loop
 while(1):
-        # display_surface.fill(white)
+        display_surface.fill(white)
         display_surface.blit(text, textRect)
         display_surface.blit(text1, textRect1)
         for event in pygame.event.get():
