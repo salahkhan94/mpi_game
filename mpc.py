@@ -1,7 +1,7 @@
-# originally written by :
-# Andrew Davison 2019
+
 # Planning
 # Dynamic Window Approach (Local Planning) with moving obstacles
+# Andrew Davison 2019
 import pygame, os, math, time, random, copy
 from pygame.locals import *
 
@@ -64,8 +64,7 @@ class Robot:
                 wry = self.y - (W/2.0) * math.cos(self.theta)
                 urx = u0 + k * wrx
                 vrx = v0 - k * wry
-                pygame.draw.circle(screen, red, (int(urx), int(vrx)), int(k * WHEELBLOB))
-                # pygame.draw.circle(screen, blue, (int(urx), int(vrx)), int(k * WHEELBLOB))
+                pygame.draw.circle(screen, blue, (int(urx), int(vrx)), int(k * WHEELBLOB))
 
 
                 # Draw paths: little arcs which show the different paths the robot is selecting between
